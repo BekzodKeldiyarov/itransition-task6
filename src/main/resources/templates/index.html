@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="input-group align-items-end mt-5">
+            <label> Choose locale
+                <select id="locale" class="form-select" aria-label="Default select example"
+                        onchange="inputsChanged(20)">
+                    <option value="ru" selected>Ru</option>
+                    <option value="en-US">En-US</option>
+                    <option value="it">It</option>
+                </select>
+            </label>
+            <label style="margin-left: 1rem"> Enter error (0-1000)
+                <input id="errorInput" type="text"
+                       class="form-control" oninput="error.value=errorInput.value/100" onchange="inputsChanged(20)">
+            </label>
+            <label style="margin-left: 1rem; width: 350px" class="form-label">Slide error value (0-10)
+                <input id="error" type="range" class="form-range" min="0" max="10" step="0.25"
+                       oninput="errorInput.value=error.value*100" value="0" list="tickmarks"
+                       onchange="inputsChanged(20)">
+                <datalist id="tickmarks">
+                    <option value="0" label="0"></option>
+                    <option value="1" label="1"></option>
+                    <option value="2" label="2"></option>
+                    <option value="3" label="3"></option>
+                    <option value="4" label="4"></option>
+                    <option value="5" label="5"></option>
+                    <option value="6" label="6"></option>
+                    <option value="7" label="7"></option>
+                    <option value="8" label="8"></option>
+                    <option value="9" label="9"></option>
+                    <option value="10" label="10"></option>
+                </datalist>
+            </label>
+            <label style="margin-left: 1rem"> Enter seed
+                <input id="seed" type="text" class="form-control" value="1" onchange="inputsChanged(20)">
+            </label>
+        </div>
+    </div>
+    <table id="data-table" class="table table-bordered mt-2">
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone number</th>
+        </tr>
+        </thead>
+        <tbody id="data-table-body">
+
+        </tbody>
+    </table>
+</div>
+
+<button class="btn btn-primary" style="position: fixed; bottom: 80px; right: 20px" onclick="exportTable()">Export
+</button>
+
+
+<script id="dataRow" type="text/x-handlebars-template">
+    <tr>
+        <td>{{number}}</td>
+        <td>{{id}}</td>
+        <td>{{name}}</td>
+        <td>{{address}}</td>
+        <td>{{phone}}</td>
+    </tr>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+<script src="FileSaver.js"></script>
+<script src="tableexport.js"></script>
+<script src="custom.js"></script>
+</body>
+</html>

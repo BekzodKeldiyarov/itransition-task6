@@ -1,0 +1,10 @@
+.tableexport-caption {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+}
+
+#tickmarks {
+    display: flex;
+    justify-content: space-between;
+}
