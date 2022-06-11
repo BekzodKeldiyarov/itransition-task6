@@ -1,4 +1,4 @@
-const url = "https://bekzodkeldiyarov-itransition6.herokuapp.com/";
+const url = "https://bekzodkeldiyarov-itransition6.herokuapp.com";
 let dataIndex = 1;
 let pageNumber = 0;
 
