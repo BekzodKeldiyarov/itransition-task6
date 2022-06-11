@@ -1,4 +1,4 @@
-const url = "http://localhost:8080";
+const url = "https://bekzodkeldiyarov-itransition6.herokuapp.com/";
 let dataIndex = 1;
 let pageNumber = 0;
 
