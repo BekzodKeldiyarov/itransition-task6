@@ -9,7 +9,6 @@ function generateData(numberOfData) {
     $.get(url + "/generateData/" + numberOfData + "/" + locale + "/" + error + "/" + (seed + pageNumber), function (response) {
         let data = response;
         for (let i = 0; i < data.length; i++) {
-            console.log(data.id)
             var template = Handlebars.compile($("#dataRow").html());
             var context = {
                 number: dataIndex++,

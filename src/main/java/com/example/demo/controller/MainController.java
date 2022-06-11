@@ -28,10 +28,9 @@ public class MainController {
     public List<Person> handleIndexForm(@PathVariable String locale, @PathVariable Integer numberOfData, @PathVariable Double error, @PathVariable Integer seed) {
         int errorIntValue = error.intValue();
         float errorFloatValue = error.floatValue() - errorIntValue;
-        System.out.println(errorFloatValue);
+
 
         if (Math.random() < errorFloatValue) {
-            System.out.println("Incremented to one more error");
             error = (double) (errorIntValue + 1);
         } else {
             error = (double) errorIntValue;
